@@ -1,0 +1,28 @@
+#background {
+    -fx-background-color: #3c3f41;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+#minimizeButton {
+    -fx-background-color:#3c3f41;
+    -fx-text-fill:white;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+#minimizeButton.button:hover {
+    -fx-background-color:#18191A;
+    -fx-font-weight:bold;
+}
+#highlightedButton {
+    -fx-background-color:#3c3f41;
+    -fx-text-fill:white;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+#highlightedButton.button:hover {
+    -fx-background-color:#ff0000;
+    -fx-font-weight:bold;
+}

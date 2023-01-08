@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root id="passBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="985.0" spacing="10.0" type="HBox" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="name" alignment="CENTER" prefHeight="18.0" prefWidth="100.0" text="Entry name" />
+      <Label fx:id="username" alignment="CENTER" prefHeight="20.0" prefWidth="125.0" text="Username" />
+      <Label fx:id="mail" alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="E-Mail" />
+      <Label fx:id="addInfo" alignment="CENTER" prefHeight="18.0" prefWidth="125.0" text="Additional Info" />
+      <Label fx:id="category" alignment="CENTER" prefHeight="18.0" prefWidth="85.0" text="Category" />
+      <Label fx:id="date" alignment="CENTER" prefHeight="18.0" prefWidth="85.0" text="Date added" />
+      <Label fx:id="password" alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="Password" />
+      <Button fx:id="showButton" mnemonicParsing="false" text="Show" textAlignment="CENTER" translateX="10.0" />
+   </children>
+</fx:root>

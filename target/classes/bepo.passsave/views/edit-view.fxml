@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import bepo.passsave.components.TitleBar?>
+<AnchorPane fx:id="anchorPane" styleClass="anchor-pane" stylesheets="@../style/general.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bepo.passsave.views.EditView">
+   <children>
+      <TextField fx:id="nameTextfield" layoutX="67.0" layoutY="40.0" prefHeight="50.0" prefWidth="182.0" promptText="Entry Name *" />
+      <TextField fx:id="usernameTextfield" layoutX="323.0" layoutY="40.0" prefHeight="50.0" prefWidth="182.0" promptText="Username *" />
+      <TextField fx:id="mailTextfield" layoutX="67.0" layoutY="127.0" prefHeight="50.0" prefWidth="182.0" promptText="E-Mail *" />
+      <PasswordField fx:id="passwordField" layoutX="322.0" layoutY="127.0" prefHeight="50.0" prefWidth="182.0" promptText="Password *" />
+      <TextField fx:id="passwordTextField" disable="true" layoutX="322.0" layoutY="127.0" prefHeight="50.0" prefWidth="182.0" promptText="Password *" visible="false" />
+      <Button fx:id="showButton" layoutX="523.0" layoutY="139.0" mnemonicParsing="false" onAction="#onShowButtonClick" text="Show" />
+      <ComboBox fx:id="categoryBox" styleClass="combo-box" layoutX="67.0" layoutY="207.0" prefHeight="50.0" prefWidth="182.0" promptText="Category" />
+      <TextField fx:id="addInfoTextfield" layoutX="323.0" layoutY="207.0" prefHeight="50.0" prefWidth="182.0" promptText="Additional Info" />
+      <Button fx:id="createButton" layoutX="458.0" layoutY="324.0" mnemonicParsing="false" onAction="#onCreateButtonClick" prefHeight="37.0" prefWidth="96.0" text="Create Entry" />
+      <TitleBar layoutX="2" layoutY="1.5" prefWidth="596.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,210 @@
+.anchor-pane {
+    -fx-alignment: center;
+    -fx-background-color: #3c3f41;
+    -fx-border-color: derive(black, 90%);
+    -fx-border-width: 1;
+}
+
+.vBox {
+    -fx-background-color: #4a4e50;
+}
+
+#passBox {
+    -fx-background-color: #4a4e50;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.choice-box {
+    -fx-background-color: #4a4e50;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: #4a4e50;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color :#3A3B3C;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :#3A3B3C;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.sortLabel:hover {
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+}
+
+/* Affects cell look and size */
+.combo-box .list-cell {
+    -fx-background: white;
+    -fx-background-color: #4c5050; /* Color where active selected item is shown */
+    -fx-text-fill: white;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 2em;
+}
+
+.combo-box-popup .list-view
+{
+    -fx-background-color: #4a4e50, transparent;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}
+
+/* Color of the actual cells containing the items */
+.combo-box-popup .list-view .list-cell
+{
+    -fx-padding: 4 0 4 5;
+
+    /* No alternate highlighting */
+    -fx-background-color: #4a4e50;
+}
+
+/* //Which color the currently selected item has
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover
+{
+    -fx-background: -fx-accent;
+    -fx-background-color: #5e5e5e;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+*/
+
+/* When a cell is hovered over */
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: grey;
+    -fx-text-fill: white;
+}
+
+/* Combobox arrow button */
+.combo-box-base > .arrow-button {
+    -fx-background-color: #494e50;
+}
+
+/* Combobox arrow */
+.combo-box-base > .arrow-button > .arrow {
+    -fx-background-color: white;
+}
+
+/* How combobox looks when not focused */
+.combo-box-base
+{
+    -fx-background-color: transparent, transparent, #4a4e50, #4a4e50; /* 2nd: border color; 3rd: base color (excluding text area) */
+    /* -> bzw. -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color; */
+
+    -fx-background-radius: 5, 4, 4, 3;
+    -fx-padding: 0;
+}
+
+.combo-box-base:hover
+{
+    -fx-color: -fx-hover-base;
+}
+
+.combo-box-base:showing
+{
+    -fx-color: -fx-pressed-base;
+}
+
+/* How combobox looks when focused */
+.combo-box-base:focused {
+    -fx-background-color: grey, #4a4e50, transparent, grey; /* -> bzw. -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color; */
+    -fx-background-radius: 6.4, 5, 5, 3;
+
+}
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+}
+
+/* Not only for managing textField but also the combo box text area //todo: create own stylesheet for editable combobox so that its text area doesnt get highlighted when focused */
+.text-field {
+    -fx-background-color: #4a4e50;
+    -fx-text-fill: white;
+    -fx-background-radius: 5, 4, 4, 3;
+}
+
+.text-field:focused {
+    -fx-background-color: grey, #4a4e50, transparent, #4a4e50; /* -> bzw. -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color; */
+    -fx-background-radius: 6.4, 5, 5, 3;
+}
+
+.color-palette {
+    -fx-background-color: #4a4e50;
+    -fx-tooltip-visible: true;
+}
+
+.color-palette .hyperlink, .color-palette .separator {
+    visibility: hidden ;
+    /*-fx-text-fill: white;*/
+}
+
+.color-palette-region {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.color-picker .color-picker-label{
+    -fx-text-fill: white;
+}
+
+.color-picker-grid {
+    -fx-background-color: dimgrey;
+}
+
+.choice-box:focused {
+    -fx-background-color: #55595b;
+    -fx-border-color: grey;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-background-color: #4a4e50;
+}
+
+.button:hover {
+    -fx-background-color: dimgrey;
+}
+
+.button:focused {
+    -fx-border-color: grey;
+}
+
+.check-box {
+    -fx-text-fill: lightgray;
+}
+
+.check-box .box {
+    -fx-background-color: lightgrey;
+}

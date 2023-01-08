@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!--<?import bepo.passsave.components.TitleBar?>-->
+<?import bepo.passsave.components.TitleBar?>
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.5" prefWidth="1000.0" styleClass="anchor-pane" stylesheets="@../style/general.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bepo.passsave.views.GuiView">
+   <children>
+      <Label layoutX="29.0" layoutY="39.0" text="PassSave" />
+      <ComboBox fx:id="passSaveComboBox" editable="true" layoutX="112.0" layoutY="35.0" prefWidth="150.0" promptText="Search PassSave" styleClass="combo-box" />
+      <Button fx:id="editButton" layoutX="287.0" layoutY="35.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="26.0" prefWidth="46.0" text="Edit" />
+      <Button fx:id="deleteButton" layoutX="349.0" layoutY="35.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete" />
+      <Button fx:id="createButton" layoutX="415.0" layoutY="35.0" mnemonicParsing="false" onAction="#onCreateButtonClick" text="Create New" />
+      <Button fx:id="categoryButton" alignment="CENTER" layoutX="591.0" layoutY="35.0" mnemonicParsing="false" onAction="#onCategoryButtonClick" text="Edit Categories" textAlignment="CENTER" />
+      <Button fx:id="exportButton" layoutX="717.0" layoutY="35.0" mnemonicParsing="false" onAction="#onExportButtonClick" text="Export PassSaves" />
+      <Button fx:id="settingsButton" layoutX="850.0" layoutY="35.0" mnemonicParsing="false" onAction="#onSettingsButtonClick" text="Settings" />
+      <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="454.0" prefWidth="1000.0" styleClass="scroll-pane" vbarPolicy="ALWAYS">
+         <content>
+            <VBox fx:id="vBox" maxWidth="1.7976931348623157E308" prefHeight="454.0" prefWidth="985.0" styleClass="vBox" />
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" layoutY="70.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="985.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER" onMouseClicked="#onNameLabelClicked" prefHeight="18.0" prefWidth="100.0" styleClass="sortLabel" text="Entry Name" />
+            <Label alignment="CENTER" onMouseClicked="#onUsernameLabelClicked" prefHeight="18.0" prefWidth="125.0" styleClass="sortLabel" text="Username" />
+            <Label alignment="CENTER" onMouseClicked="#onMailLabelClicked" prefHeight="18.0" prefWidth="150.0" styleClass="sortLabel" text="E-Mail" />
+            <Label alignment="CENTER" onMouseClicked="#onAddInfoLabelClicked" prefHeight="18.0" prefWidth="125.0" styleClass="sortLabel" text="Additional Info" />
+            <Label alignment="CENTER" onMouseClicked="#onCategoryLabelClicked" prefHeight="18.0" prefWidth="85.0" styleClass="sortLabel" text="Category" />
+            <Label onMouseClicked="#onDateLabelClicked" prefHeight="18.0" prefWidth="85.0" styleClass="sortLabel" text="Last  Changed" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="150.0" text="Password" />
+            <Button disable="true" mnemonicParsing="false" text="Show" visible="false" />
+         </children>
+      </HBox>
+      <!--<TitleBar layoutX="2.0" layoutY="1.5" prefWidth="996.0" />-->
+      <TitleBar layoutX="2.0" layoutY="1.5" prefWidth="996.0" />
+   </children>
+</AnchorPane>
