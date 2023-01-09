@@ -6,6 +6,8 @@ import bepo.passsave.model.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
+
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
@@ -13,9 +15,6 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
-import java.nio.file.FileSystemException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.spec.KeySpec;
 import java.time.LocalDate;
@@ -39,6 +38,32 @@ public class Serialization {
     private static final String categoryPath = "application-files/Cat.ser";
     private static final String settingsPath = "application-files/Settings.ser";
 
+    private static void keyGen() throws Exception {
+        System.out.println("Entered Keygen because no key could be found");
+
+        boolean valid = false;
+        Random random = new Random();
+        String alphabet = "0123456789QWERTZUIOPASDFGHJKLYXCVBNM";
+        String key = "";
+
+        while(!valid) {
+            for (int i = 0; i <= 10; i++) {
+                key += (alphabet.charAt(random.nextInt(alphabet.length())));
+            }
+
+            try {
+                encrypt("sampleData", key);
+                valid = true;
+
+            } catch(BadPaddingException e) {
+                System.err.println("Generated key invalid, trying again...");
+            }
+        }
+
+        secretKey = key;
+        serializeKey(key);
+    }
+
     public static void deserializeKey() throws Exception {
         byte[] encrypted = {};
 
@@ -51,16 +76,7 @@ public class Serialization {
         secretKey = decrypt(encrypted, cryptKey);
 
         if(secretKey == null || secretKey.isEmpty()) {
-            System.out.println("Entered Keygen because no key could be found");
-            Random random = new Random();
-
-            String alphabet = "0123456789QWERTZUIOPASDFGHJKLYXCVBNM";
-            String key = "";
-            for (int i = 0; i <= 10; i++) {
-                key += (alphabet.charAt(random.nextInt(alphabet.length())));
-            }
-
-            serializeKey(key);
+            keyGen();
         }
 
         System.out.println("Deserializing key complete");
@@ -248,19 +264,19 @@ public class Serialization {
     }
 
     //Uses triple DES encryption to encrypt each String of data
-    private static byte[] encrypt(String data, String key) throws Exception {
+    private static byte[] encrypt(String data, String givenKey) throws Exception {
         final MessageDigest md = MessageDigest.getInstance("md5");
-        final byte[] digestOfPassword = md.digest(key.getBytes("utf-8"));
+        final byte[] digestOfPassword = md.digest(givenKey.getBytes("utf-8"));
         final byte[] keyBytes = Arrays.copyOf(digestOfPassword, 24);
 
         for (int j = 0, k = 16; j < 8;) {
             keyBytes[k++] = keyBytes[j++];
         }
 
-        final SecretKey keyy = new SecretKeySpec(keyBytes, "DESede");
+        final SecretKey key = new SecretKeySpec(keyBytes, "DESede");
         final IvParameterSpec iv = new IvParameterSpec(new byte[8]);
         final Cipher cipher = Cipher.getInstance("DESede/CBC/PKCS5Padding");
-        cipher.init(Cipher.ENCRYPT_MODE, keyy, iv);
+        cipher.init(Cipher.ENCRYPT_MODE, key, iv);
 
         final byte[] plainTextBytes = data.getBytes("utf-8");
         final byte[] cipherText = cipher.doFinal(plainTextBytes);
@@ -269,19 +285,19 @@ public class Serialization {
     }
 
     //Decrypts Triple DES encryption for each byte[] of data
-    private static String decrypt(byte[] data, String key) throws Exception {
+    private static String decrypt(byte[] data, String givenKey) throws Exception {
         final MessageDigest md = MessageDigest.getInstance("md5");
-        final byte[] digestOfPassword = md.digest(key.getBytes("utf-8"));
+        final byte[] digestOfPassword = md.digest(givenKey.getBytes("utf-8"));
         final byte[] keyBytes = Arrays.copyOf(digestOfPassword, 24);
 
         for (int j = 0, k = 16; j < 8;) {
             keyBytes[k++] = keyBytes[j++];
         }
 
-        final SecretKey keyy = new SecretKeySpec(keyBytes, "DESede");
+        final SecretKey key = new SecretKeySpec(keyBytes, "DESede");
         final IvParameterSpec iv = new IvParameterSpec(new byte[8]);
         final Cipher decipher = Cipher.getInstance("DESede/CBC/PKCS5Padding");
-        decipher.init(Cipher.DECRYPT_MODE, keyy, iv);
+        decipher.init(Cipher.DECRYPT_MODE, key, iv);
 
         final byte[] plainText = decipher.doFinal(data);
 
