@@ -217,6 +217,11 @@ public class PassController implements Initializable {
         }
     }
 
+    public void clearData() throws Exception {
+        passSaveList.clear();
+        Serialization.serialize(passSaveList);
+    }
+
     public void setGuiView(GuiView guiView) { this.guiView = guiView; }
     public void setSettingsController(SettingsController settingsController) { this.settingsController = settingsController; }
 }

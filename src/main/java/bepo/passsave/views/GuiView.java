@@ -32,7 +32,6 @@ public class GuiView implements Initializable {
     private SettingsView settingsView;
     private PassController passController;
 
-    @FXML private AnchorPane anchorPane;
     @FXML private VBox vBox;
     @FXML private ScrollPane scrollPane;
     @FXML private ComboBox<String> passSaveComboBox;
@@ -49,8 +48,6 @@ public class GuiView implements Initializable {
     }
 
     public void onControllersSet() {
-        //anchorPane.getScene().getStylesheets().add(Main.class.getResource("/bepo.passsave/style/general.css").toExternalForm());
-
         passSaveComboBox.setItems(passController.getAllNames());
 
         for (PassSave passSave : passController.getAll()) {
@@ -66,8 +63,6 @@ public class GuiView implements Initializable {
         vBox.getChildren().clear();
 
         onControllersSet();
-
-        //System.out.println("Refreshed guiView content");
     }
 
     @FXML

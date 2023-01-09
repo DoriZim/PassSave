@@ -61,6 +61,8 @@ public class PinController implements Initializable {
 
         if((pin != null && (pin.length() == 4))) {
             login = true;
+        } else {
+            login = false;
         }
 
         return login;
@@ -72,5 +74,12 @@ public class PinController implements Initializable {
 
     public void setEdit(boolean value) {
         edit = value;
+    }
+
+    public void clearPin() throws Exception {
+        pin = "";
+        Serialization.serializePin(pin);
+
+        login = false;
     }
 }

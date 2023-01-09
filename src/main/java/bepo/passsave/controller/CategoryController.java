@@ -112,6 +112,12 @@ public class CategoryController {
         return false;
     }
 
+    public void clearData() throws Exception {
+        categoryList.clear();
+        categoryList.add(placeholder);
+        Serialization.serializeCategories(categoryList);
+    }
+
     public void setGuiView(GuiView guiView) { this.guiView = guiView; }
     public void setPassController(PassController passController) { this.passController = passController; }
 }

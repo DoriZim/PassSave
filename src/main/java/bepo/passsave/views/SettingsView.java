@@ -3,10 +3,8 @@ package bepo.passsave.views;
 import bepo.passsave.RootNodeFetcher;
 import bepo.passsave.controller.SettingsController;
 import bepo.passsave.model.Settings;
-import bepo.passsave.util.Alerts;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -18,7 +16,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 

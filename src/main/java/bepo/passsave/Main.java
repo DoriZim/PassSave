@@ -89,6 +89,9 @@ public class Main extends Application {
         this.editView.setSettingsController(this.settingsController);
         this.categoryView.setSettingsController(this.settingsController);
         this.advancedSettingsView.setPinController(this.pinController);
+        this.advancedSettingsView.setSettingsController(this.settingsController);
+        this.advancedSettingsView.setPassController(this.passController);
+        this.advancedSettingsView.setCategoryController(this.categoryController);
 
         //Setting views in controllers
         this.categoryController.setGuiView(this.guiView);
@@ -99,6 +102,8 @@ public class Main extends Application {
         this.guiView.setCategoryView(this.categoryView);
         this.guiView.setEditView(this.editView);
         this.guiView.setSettingsView(this.settingsView);
+        this.advancedSettingsView.setGuiView(this.guiView);
+        this.advancedSettingsView.setSettingsView(this.settingsView);
 
         //Calls onControllerSet of these classes early because the rest of the program depends on them
         settingsController.onControllersSet();
