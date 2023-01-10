@@ -52,7 +52,8 @@ public class Serialization {
             }
 
             try {
-                encrypt("sampleData", key);
+                byte[] temp = encrypt("sampleData", key);
+                decrypt(temp, key);
                 valid = true;
 
             } catch(BadPaddingException e) {
