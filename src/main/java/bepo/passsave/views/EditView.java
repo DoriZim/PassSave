@@ -29,7 +29,7 @@ public class EditView implements Initializable {
     @FXML private TextField nameTextfield, usernameTextfield, mailTextfield, passwordTextField, addInfoTextfield;
     @FXML private PasswordField passwordField;
     @FXML private ComboBox<Category> categoryBox;
-    @FXML private Button createButton;
+    @FXML private Button createButton, generatePasswordButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
@@ -100,8 +100,11 @@ public class EditView implements Initializable {
                 closeStageIfDesired();
             }
         }
+    }
 
-
+    public void onGeneratePasswordClick(ActionEvent actionEvent) {
+        System.out.println("Creating safe password...");
+        passwordTextField.setText("password");
     }
 
     private void closeStageIfDesired() {

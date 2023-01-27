@@ -10,7 +10,7 @@
 
 <!--<?import bepo.passsave.components.TitleBar?>-->
 <?import bepo.passsave.components.TitleBar?>
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.5" prefWidth="1000.0" styleClass="anchor-pane" stylesheets="@../style/general.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bepo.passsave.views.GuiView">
+<AnchorPane fx:id="anchorPane" styleClass="anchor-pane" stylesheets="@../style/general.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bepo.passsave.views.GuiView">
    <children>
       <Label layoutX="29.0" layoutY="39.0" text="PassSave" />
       <ComboBox fx:id="passSaveComboBox" editable="true" layoutX="112.0" layoutY="35.0" prefWidth="150.0" promptText="Search PassSave" styleClass="combo-box" />
@@ -34,7 +34,7 @@
             <Label alignment="CENTER" onMouseClicked="#onCategoryLabelClicked" prefHeight="18.0" prefWidth="85.0" styleClass="sortLabel" text="Category" />
             <Label onMouseClicked="#onDateLabelClicked" prefHeight="18.0" prefWidth="85.0" styleClass="sortLabel" text="Last  Changed" />
             <Label alignment="CENTER" prefHeight="18.0" prefWidth="150.0" text="Password" />
-            <Button disable="true" mnemonicParsing="false" text="Show" visible="false" />
+            <Button id="HelloButton" disable="true" mnemonicParsing="false" text="Show" visible="false" />
          </children>
       </HBox>
       <!--<TitleBar layoutX="2.0" layoutY="1.5" prefWidth="996.0" />-->

@@ -15,6 +15,7 @@
       <ComboBox fx:id="categoryBox" styleClass="combo-box" layoutX="67.0" layoutY="207.0" prefHeight="50.0" prefWidth="182.0" promptText="Category" />
       <TextField fx:id="addInfoTextfield" layoutX="323.0" layoutY="207.0" prefHeight="50.0" prefWidth="182.0" promptText="Additional Info" />
       <Button fx:id="createButton" layoutX="458.0" layoutY="324.0" mnemonicParsing="false" onAction="#onCreateButtonClick" prefHeight="37.0" prefWidth="96.0" text="Create Entry" />
+      <Button fx:id="generatePasswordButton" layoutX="458.0" layoutY="200" mnemonicParsing="false" onAction="#onGeneratePasswordClick" prefHeight="37.0" prefWidth="96.0" text="Generate Password" />
       <TitleBar layoutX="2" layoutY="1.5" prefWidth="596.0" />
    </children>
 </AnchorPane>
